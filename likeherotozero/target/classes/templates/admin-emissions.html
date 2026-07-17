@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pending emissions</title>
+</head>
+<body>
+
+<h2>Pending emissions</h2>
+
+<table border="1">
+  <tr>
+    <th>Country</th>
+    <th>Year</th>
+    <th>CO₂ (kt)</th>
+    <th>Action</th>
+  </tr>
+
+  <tr th:if="${#lists.isEmpty(emissions)}">
+    <td colspan="4">No pending emissions 🎉</td>
+  </tr>
+
+  <tr th:each="e : ${emissions}">
+    <td th:text="${e.countryName}">Spain</td>
+    <td th:text="${e.emissionsYear}">2024</td>
+    <td th:text="${e.co2EmissionsKt}">250000</td>
+    <td>
+      <form th:action="@{/admin/emissions/{id}/approve(id=${e.id})}" method="post">
+        <button type="submit">Approve</button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+
+</body>
+</html>

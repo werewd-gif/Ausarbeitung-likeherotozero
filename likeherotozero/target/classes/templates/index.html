@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Like Hero To Zero</title>
+</head>
+<body>
+
+<h1>Like Hero To Zero</h1>
+
+<p>
+    Diese Anwendung zeigt die aktuellsten verfügbaren CO₂-Emissionsdaten pro Land.
+</p>
+
+<form onsubmit="this.action='/emissions/' + document.getElementById('country').value.toUpperCase();">
+
+    <label for="country">Ländercode (z. B. DE, FR, ES):</label>
+    <input type="text" id="country" name="country" required>
+    <button type="submit">Anzeigen</button>
+</form>
+
+<h2>Internal access</h2>
+<ul>
+  <li><a href="/login">Login as scientist (add data)</a></li>
+  <li><a href="/login">Login as administrator (approve data)</a></li>
+</ul>
+
+</body>
+</html>
+
+
+

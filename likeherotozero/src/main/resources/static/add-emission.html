@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add CO₂ Emission</title>
+</head>
+<body>
+<h2>Add new CO₂ emission</h2>
+
+<form method="post" action="/api/emissions">
+    <label>Country code:
+        <input name="countryCode" value="ES">
+    </label><br>
+
+    <label>Country name:
+        <input name="countryName" value="Spain">
+    </label><br>
+
+    <label>Year:
+        <input name="emissionsYear" type="number" value="2024">
+    </label><br>
+
+    <label>CO₂ (kt):
+        <input name="co2EmissionsKt" type="number" value="250000">
+    </label><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<hr>
+
+<p>
+    <a href="/">→ Search emissions by country</a>
+</p>
+
+
+</body>
+</html>

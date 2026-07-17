@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Emissionen</title>
+</head>
+<body>
+
+<h1>CO₂-Emissionen</h1>
+
+<div th:if="${emission != null}">
+    <p>
+        <strong th:text="${emission.countryName}">Land</strong>
+        (<span th:text="${emission.emissionsYear}">Jahr</span>):
+        <span th:text="${emission.co2EmissionsKt}">0</span> kt CO₂
+    </p>
+</div>
+
+<div th:if="${emission == null}">
+    <p>
+        Keine Emissionsdaten für
+        <strong th:text="${country}">Land</strong> gefunden.
+    </p>
+</div>
+
+<p>
+    <a href="/">Zurück zur Startseite</a>
+</p>
+
+</body>
+</html>
